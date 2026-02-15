@@ -6,20 +6,20 @@ function FloorGround() {
   
   const rooms = [
   
-    { id: 'placement-cell', name: ' Adm. off.', x: 120, y: 13, width: 70, height: 90},
-    { id: 'pharma-cell', name: 'Lift', x: 207, y: 14, width: 45, height: 20 },
-    { id: 'washroom-boys', name: 'BW', x: 255, y: 14, width: 38, height: 29 },
-    { id: 'washroom-girls', name: 'Gw', x: 255, y: 47, width: 38, height: 29 },
+    { id: ' Adm. off.', name: ' Adm. off.', x: 120, y: 13, width: 70, height: 90},
+    { id: 'Lift', name: 'Lift', x: 207, y: 14, width: 45, height: 20 },
+    { id: 'BW', name: 'BW', x: 255, y: 14, width: 38, height: 29 },
+    { id: 'Gw', name: 'Gw', x: 255, y: 47, width: 38, height: 29 },
 
-     { id: 'staff-room', name: 'LT 2', x: 313, y: 14, width: 100, height: 110},
-    { id: 'staff-room', name: 'DLC', x: 516, y: 14, width: 100, height: 110},
-     { id: 'staff-room', name: 'Library', x: 415, y: 13, width: 100, height: 50 },
-      { id: 'staff-room', name: 'Saraswati ma', x: 415, y: 339, width: 100, height: 50 },
-    { id: 'lobby', name: 'Lobby', x: 620, y: 15, width: 58, height: 110 },
-    { id: 'ca-9', name: 'cr 3', x: 777, y: 290, width: 90, height: 95 },
-     { id: 'ca-9', name: 'cr 4', x: 680, y: 290, width: 90, height: 95 },
-    { id: 'ca-9', name: 'Lab', x: 680, y: 15, width: 90, height: 110 },
-    { id: 'ca-10', name: 'Adm. cell', x: 775, y: 17, width: 88, height: 130  },
+     { id: 'LT 2', name: 'LT 2', x: 313, y: 14, width: 100, height: 110},
+    { id: 'DLC', name: 'DLC', x: 516, y: 14, width: 100, height: 110},
+     { id: 'Library', name: 'Library', x: 415, y: 13, width: 100, height: 50 },
+      { id: 'Saraswati ma', name: 'Saraswati ma', x: 415, y: 339, width: 100, height: 50 },
+    { id: 'Lobby', name: 'Lobby', x: 620, y: 15, width: 58, height: 110 },
+    { id: 'cr 3', name: 'cr 3', x: 777, y: 290, width: 90, height: 95 },
+     { id: 'cr 4', name: 'cr 4', x: 680, y: 290, width: 90, height: 95 },
+    { id: 'Lab', name: 'Lab', x: 680, y: 15, width: 90, height: 110 },
+    { id: 'Adm. cell', name: 'Adm. cell', x: 775, y: 17, width: 88, height: 130  },
 
     // Middle corridor area
     { id: 'corridor-top', name: '', x: 20, y: 149, width: 845, height: 90},
@@ -56,9 +56,10 @@ function FloorGround() {
             
             {/* Render all rooms */}
             {rooms.map(room => {
-              const isGarden = room.id === 'mughal-garden';
-              const isCorridor = room.id.includes('corridor') || room.id === 'passage' || room.id === 'lobby';
-              const isWayPath = room.id === 'way-to-green';
+              const nameLower = room.name ? room.name.trim().toLowerCase() : '';
+              const isGarden = nameLower === 'mughal garden' || room.id === 'mughal-garden';
+              const isCorridor = room.id.includes('corridor') || nameLower.includes('corridor') || nameLower === 'passage' || nameLower === 'lobby';
+              const isWayPath = nameLower === 'way-to-green' || room.id === 'way-to-green';
               
               return (
                 <g key={room.id}>
