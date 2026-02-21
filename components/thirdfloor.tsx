@@ -24,7 +24,6 @@ function ThirdFloor() {
     { id: 'Physics Lab2', name: 'Physics Lab2', x: 175, y: 20, width: 140, height: 65, color: '#ede7f6' },
     { id: 'Robotics Lab', name: 'Robotics Lab', x: 325, y: 20, width: 100, height: 65, color: '#e0f2f1' },
     { id: 'Server Room Top', name: 'Server Room', x: 435, y: 20, width: 80, height: 65, color: '#f1f8e9' },
-    { id: 'Mac lab', name: 'Mac lab', x: 525, y: 20, width: 160, height: 65, color: '#fce4ec' },
     { id: 'CL12', name: 'CL12', x: 735, y: 20, width: 120, height: 135, color: '#e8eaf6' },
 
     // ============ TOP CORRIDOR (y: 95) ============
